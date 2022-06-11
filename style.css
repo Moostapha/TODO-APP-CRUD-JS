@@ -1,1 +1,105 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app {
+  width: 300px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 5px solid #0c729e;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#app #addNewTask {
+  background-color: #68aecd;
+  width: 235px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#app #addNewTask .fa-plus {
+  background-color: #1a7ca7;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+#app #tasks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100px;
+  width: 230px;
+  background-color: #68aecd;
+  padding: 15px;
+  border: 5px solid #0c729e;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#app #tasks h5 {
+  margin: 2px 0px 10px;
+  font-weight: bolder;
+}
+
+#app #tasks p {
+  margin: 0px;
+}
+
+#app #tasks span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#app #tasks i {
+  background-color: #1a7ca7;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

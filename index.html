@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>TODO APP</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     
+    <!-- Tout contenu app ici -->
+        <div id="app">
+            
+            <h3>TODO APP</h3>
+                
+            <!-- Bouton ajout nouvelle tâche -->
+                <div id="addNewTask">
+                    <span>Add New Task</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            <!-- fin -->
+                
+            <h4>TASKS</h4>
+            
+            <!-- injection dynamique des tâches dans cette div -->
+                <div id="tasks">
+                    <div>
+                        <h5>Task 1</h5>
+                        <p>Date</p>
+                        <p>text description</p>
+                        <span>
+                            <i onClick="updatePost(this)" class="fa-solid fa-pen-to-square"></i>
+                            <i onClick="deletePost(this)" class="fa-solid fa-trash-can"></i>
+                        </span>
+                    </div>
+                    <!-- <div>
+                        <h5>Task 1</h5>
+                        <p>Date</p>
+                        <p>text description</p>
+                    </div> -->
+                </div>
+            <!-- fin -->
+        </div>
+    <!-- fin contenu app  -->
+
 </body>
 <script src="app.js"></script>
 </html>
