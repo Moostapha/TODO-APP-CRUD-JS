@@ -49,19 +49,19 @@
                                     <div class="modal-body">
                                         
                                         <!-- <label for="texte">Task Title</label> -->
-                                        <p>Task Title</p>
+                                        <p class="label">Task Title</p>
                                         <input id="titleTaskInput" name="" class="form-control" type="texte">
                                         <div id="errorMsg"></div>
                                         <br>
                                         
                                         <!-- <label for="date">Date</label> -->
-                                        <p>Date</p>
+                                        <p class="label">Date</p>
                                         <input id="dateTaskInput" name="" class="form-control"  type="date">
                                         <div id="errorMsg"></div>
                                         <br>
                                         
                                         <!-- <label for="texte">Description</label> -->
-                                        <p>Description</p>
+                                        <p class="label">Description</p>
                                         <textarea id="textTask" name="" class="form-control" type="texte" cols="10" rows="5"></textarea>
                                         <div id="errorMsg"></div>
                                     </div>
@@ -84,22 +84,20 @@
                     
                     <div >
                         <span class="fw-bold">Task 1</span>
-                        <span class="small">Date</span>
+                        <span class="small font-italic">Date</span>
                         <p>text description</p>
                         <span class="optionsBtns">
-                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square"></i>
+                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#form"></i>
                             <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
                         </span>
                     </div>
                     
-                    <br>
-                    
                     <div>
                         <span class="fw-bold">Task 2</span>
-                        <span class="small">Date</span>
+                        <span class="small font-italic">Date</span>
                         <p>text description</p>
                         <span class="optionsBtns">
-                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square"></i>
+                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#form"></i>
                             <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
                         </span>
                     </div>

@@ -81,58 +81,67 @@ function formValidation(){
     }
 }
 
+function resetForm(){
+    // reset form
+    titleTaskInput.value = '';
+    dateTaskInput.value = '';
+    textTask.value = '';
+}
 
 // CRUD
 function createTask() {
     // template litteral élément dynamique peuvent être ceux du tableau logEntryTask et ses clés:valeur
     tasks.innerHTML += `
-        <br>
-        <div >
-        <span class="fw-bold">${titleTaskInput.value}</span>
-        <span class="small">${dateTaskInput.value}</span>
-        <p>${textTask.value}</p>
-        <span class="optionsBtns">
-            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#form"></i>
-            <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
-        </span>
-        </div>
         
+        <div>
+            <span class="fw-bold">${titleTaskInput.value}</span>
+            <span class="small font-italic">${dateTaskInput.value}</span>
+            <p>${textTask.value}</p>
+            <span class="optionsBtns">
+                <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#form"></i>
+                <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
+            </span>
+        </div>
     `
+    
     // reset form
-    titleTaskInput.value = '';
-    dateTaskInput.value = '';
-    textTask.value = '';
+    resetForm();
 
+}
+
+function updateTask(e){
+    
+    // task to update
+    // let titleToUpdate = titleTaskInput.value;
+    // let dateToUpdate = dateTaskInput.value;
+    // let descriptionToUpdate = textTask.value;
+    // console.log('INPUTS TASK:', titleToUpdate)
+    
+    // Access to values in DOM via template litteral
+    // let showDescriptionInForm = e.parentElement.previousElementSibling.innerHTML;                                              // texte de description
+    // let showDateInForm = e.parentElement.previousElementSibling.previousElementSibling.innerHTML;                             // date
+    // let showTitleInForm = e.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;    // title
+    
+    // console.log('VALEUR DE SAISIE DE TITLE:', showTitleInForm );
+    // console.log('VALEUR DE SAISIE DE DATE:', showDateInForm );
+    // console.log('VALEUR DE SAISIE DE DESCRIPTION:', showDescriptionInForm );
+    
+    // Sélection de la DIV parent possédant nos 3 inputs, en partant de update(this)
+    let selectedTask = e.parentElement.parentElement;
+    console.log('SELECTED TASK:', selectedTask);
+    
+    // écriture des valeurs dans les div enfants
+    titleTaskInput.value = selectedTask.children[0].innerHTML;
+    dateTaskInput.value = selectedTask.children[1].innerHTML;
+    textTask.value = selectedTask.children[2].innerHTML;
+    
+    // remove ancien post
+    deleteTask(e)
+    
 }
 
 function deleteTask(e) {
     e.parentElement.parentElement.remove();
 }
 
-function updateTask(e){
-    
-    // task to update
-    let titleToUpdate = titleTaskInput.value;
-    let dateToUpdate = dateTaskInput.value;
-    let descriptionToUpdate = textTask.value;
-    
-    // Access to values in DOM via template litteral
-    let showDescriptionInForm = e.parentElement.previousElementSibling.innerHTML;                                              // texte de description
-    let showDateInForm = e.parentElement.previousElementSibling.previousElementSibling.innerHTML;                             // date
-    let showTitleInForm = e.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;    // title
-    
-    console.log('VALEUR DE SAISIE DE TITLE:', showTitleInForm );
-    console.log('VALEUR DE SAISIE DE DATE:', showDateInForm );
-    console.log('VALEUR DE SAISIE DE DESCRIPTION:', showDescriptionInForm );
-    
-    getUserInput(showTitleInForm, showDateInForm, showDescriptionInForm);
-    // create new inputs of the new task
-    // title = value;
-    // date = value;
-    // description = value;
-    
-    // showTitleInForm = titleToUpdate;
-    // showDateInForm = dateToUpdate;
-    // showDescriptionInForm = descriptionToUpdate;
-}
 
