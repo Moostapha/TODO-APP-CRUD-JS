@@ -4,47 +4,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>TODO APP</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="my-5">
     
     <!-- Tout contenu app ici -->
-        <div id="app">
+        <div class="app">
             
-            <h3>TODO APP</h3>
+            <h3 class="mb-2">TODO APP</h3>
                 
-            <!-- Bouton ajout nouvelle tâche -->
-                <div id="addNewTask">
+            <!-- Bouton ajout nouvelle tâche data-bs-toggle="modal" data-bs-target="#exampleModal" coupé de button trigger modal -->
+                <div id="addNewTask" data-bs-toggle="modal" data-bs-target="#form">
                     <span>Add New Task</span>
                     <i class="fa-solid fa-plus"></i>
                 </div>
             <!-- fin -->
                 
-            <h4>TASKS</h4>
+            <h4 class="my-3">TASKS</h4>
+            
+            <!-- pris sur https://getbootstrap.com/docs/5.2/components/modal/#content live modal -->
+                
+                <!-- Button trigger modal  sera placé sur addNewTask-->
+                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+                    </button> -->
+                <!-- fin -->
+                
+                <!-- Modal -->
+                    <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        
+                        <!-- Boîte de dialogue -->
+                            <div class="modal-dialog">
+                                content
+                                <div class="modal-content">
+                                    
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+                                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                                    </div>
+                                    
+                                    <div class="modal-body">
+                                        
+                                        <!-- <label for="texte">Task Title</label> -->
+                                        <p>Task Title</p>
+                                        <input id="titleTaskInput" name="" class="form-control" type="texte">
+                                        <div id="errorMsg"></div>
+                                        <br>
+                                        
+                                        <!-- <label for="date">Date</label> -->
+                                        <p>Date</p>
+                                        <input id="dateTaskInput" name="" class="form-control"  type="date">
+                                        <div id="errorMsg"></div>
+                                        <br>
+                                        
+                                        <!-- <label for="texte">Description</label> -->
+                                        <p>Description</p>
+                                        <textarea id="textTask" name="" class="form-control" type="texte" cols="10" rows="5"></textarea>
+                                        <div id="errorMsg"></div>
+                                    </div>
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- fin -->
+                        
+                    </form>
+                <!-- fin -->
+            
+            <!-- fin -->
             
             <!-- injection dynamique des tâches dans cette div -->
                 <div id="tasks">
-                    <div>
-                        <h5>Task 1</h5>
-                        <p>Date</p>
+                    
+                    <div >
+                        <span class="fw-bold">Task 1</span>
+                        <span class="small">Date</span>
                         <p>text description</p>
-                        <span>
-                            <i onClick="updatePost(this)" class="fa-solid fa-pen-to-square"></i>
-                            <i onClick="deletePost(this)" class="fa-solid fa-trash-can"></i>
+                        <span class="optionsBtns">
+                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square"></i>
+                            <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
                         </span>
                     </div>
-                    <!-- <div>
-                        <h5>Task 1</h5>
-                        <p>Date</p>
+                    
+                    <br>
+                    
+                    <div>
+                        <span class="fw-bold">Task 2</span>
+                        <span class="small">Date</span>
                         <p>text description</p>
-                    </div> -->
+                        <span class="optionsBtns">
+                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square"></i>
+                            <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
+                        </span>
+                    </div>
+                    
                 </div>
             <!-- fin -->
         </div>
     <!-- fin contenu app  -->
 
 </body>
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
 </html>

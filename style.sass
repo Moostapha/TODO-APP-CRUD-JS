@@ -1,63 +1,131 @@
+// Variables pour style .app
+$bc-app : #fff;
+$width-app: 400px;
+$height-app: 600px;
+$border-app: 5px solid #0c729e;
+$border-radius-app: 20px;
+$padding-app: 5px;
+
+// var #addNewTask
+$bc-addNewTask: #68aecd;
+$width-addNewTask: 300px;
+$bc-plus: #1a7ca7;
+$padding-plus: 4px;
+$border-radius-plus: 4px;
+
+
+// Var #tasks
+$bc-tasks : #68aecd;
+$border-tasks : #68aecd;
+$width-tasks : 300px;
+$padding-tasks: 15px;
+$border-tasks: 5px solid #0c729e;
+$border-radius-tasks: 20px;
+$background-color-i: #1a7ca7;
+$padding-i: 5px;
+$margin-i: 3px;
+$border-radius-i: 5px; 
+
+
+@mixin app($bc, $width, $height, $border, $border-radius, $padding)
+    background-color: $bc
+    width: $width
+    height: $height
+    display: flex 
+    flex-direction: column
+    align-content: center
+    align-items: center
+    border: $border
+    border-radius: $border-radius
+    padding: $padding
+    // curseur scrolling sinon new div dépasse
+    overflow-y: scroll
+
+.app 
+    @include app($bc-app, $width-app, $height-app, $border-app, $border-radius-app, $padding-app)
+//invisibilité de la scrollbar tout en gardant sa fonction
+.app::-webkit-scrollbar
+    // width: 0 !important ou
+    display: none
+
 body
+    // margin-top: 10px
     font-family: sans-serif
     display: flex
     flex-direction: column
     align-items: center
 
-#app
-    // background-color: #68aecd
+
+// .app
+//     background-color: #fff
+//     width: 400px
+//     height: 600px
+//     display: flex 
+//     flex-direction: column
+//     align-content: center
+//     align-items: center
+//     border: 5px solid #0c729e
+//     border-radius: 20px
+//     padding: 5px
+//     // curseur scrolling sinon new div dépasse
+//     overflow-y: scroll 
+
+// //invisibilité de la scrollbar tout en gardant sa fonction
+// .app::-webkit-scrollbar
+//     // width: 0 !important ou
+//     display: none
+
+h3
+    font-weight: bolder
+h4
+    // margin: 5px
+
+
+#addNewTask
+    background-color: #68aecd
     width: 300px
-    height: 500px
-    display: flex 
-    flex-direction: column
-    align-content: center
+    display: flex
+    flex-direction: row
+    justify-content: space-between
     align-items: center
-    border: 5px solid #0c729e
     border-radius: 20px
-    padding: 5px
-    
-    h3
-    
-    h4
-        
-    
-    
-    #addNewTask
-        background-color: #68aecd
-        width: 235px
+    padding: 12px
+    cursor: pointer
+    .fa-plus
+        background-color: #1a7ca7
+        padding: 4px
+        border-radius: 4px
+
+.modal-body
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    #errorMsg
+        color: red
+
+//parent enfant pour appliquer style du parent sur all div child
+#tasks div
+    display: flex
+    flex-direction: column
+    // height: 100px
+    justify-content: space-between
+    width: 300px
+    background-color: #68aecd
+    padding: 15px
+    border: 5px solid #0c729e
+    border-radius: 20px 
+    // .taskTitle
+    //     font-weight: bolder fait avec bootstrap en ajoutant class="fw-bold"
+    p
+        margin: 1px
+    .optionsBtns
         display: flex
         flex-direction: row
-        justify-content: space-between
-        border-radius: 20px
-        padding: 15px
-        cursor: pointer
-        .fa-plus
-            background-color: #1a7ca7
-            padding: 6px
-            border-radius: 4px
-    #tasks
-        display: flex
-        flex-direction: column
-        height: 100px
-        width: 230px
-        background-color: #68aecd
-        padding: 15px
-        border: 5px solid #0c729e
-        padding: 10px
-        border-radius: 20px 
-        h5
-            margin: 2px 0px 10px
-            font-weight: bolder
-        p
-            margin: 0px
-        span
-            display: flex
-            flex-direction: row
-            justify-content: flex-end
+        justify-content: flex-end
         i
             background-color: #1a7ca7
-            padding: 8px
-            margin: 5px
+            padding: 5px
+            margin: 3px
             border-radius: 5px 
             cursor: pointer
 
