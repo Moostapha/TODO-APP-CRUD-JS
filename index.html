@@ -23,7 +23,7 @@
                 </div>
             <!-- fin -->
                 
-            <h4 class="my-3">TASKS</h4>
+            <h4>TASKS</h4>
             
             <!-- pris sur https://getbootstrap.com/docs/5.2/components/modal/#content live modal -->
                 
@@ -67,8 +67,12 @@
                                     </div>
                                     
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button id="add" type="submit" class="btn btn-primary">
+                                            Add
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -81,27 +85,6 @@
             
             <!-- injection dynamique des tâches dans cette div -->
                 <div id="tasks">
-                    
-                    <div >
-                        <span class="fw-bold">Task 1</span>
-                        <span class="small font-italic">Date</span>
-                        <p>text description</p>
-                        <span class="optionsBtns">
-                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#form"></i>
-                            <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
-                        </span>
-                    </div>
-                    
-                    <div>
-                        <span class="fw-bold">Task 2</span>
-                        <span class="small font-italic">Date</span>
-                        <p>text description</p>
-                        <span class="optionsBtns">
-                            <i onClick="updateTask(this)" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#form"></i>
-                            <i onClick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
-                        </span>
-                    </div>
-                    
                 </div>
             <!-- fin -->
         </div>

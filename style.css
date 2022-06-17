@@ -43,13 +43,18 @@ h3 {
   font-weight: bolder;
 }
 
+h4 {
+  margin-top: 3vh;
+}
+
 .label {
   color: #0c729e;
   font-weight: bold;
 }
 
 #addNewTask {
-  background-color: #68aecd;
+  background: -webkit-gradient(linear, left top, right top, color-stop(35%, #68aecd), to(#00d5ff93));
+  background: linear-gradient(90deg, #68aecd 35%, #00d5ff93 100%);
   width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,7 +109,8 @@ h3 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 300px;
-  background-color: #68aecd;
+  background: -webkit-gradient(linear, left top, right top, color-stop(35%, #68aecd), to(#00d5ff93));
+  background: linear-gradient(90deg, #68aecd 35%, #00d5ff93 100%);
   padding: 15px;
   border: 5px solid #0c729e;
   border-radius: 20px;
